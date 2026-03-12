@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. César Ramírez — Contacto</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --blue: #2b6cb0;
+    --blue-light: #ebf2fa;
+    --blue-muted: #4a8cc7;
+    --text: #1a2332;
+    --text-muted: #6b7a8d;
+    --red: #d64545;
+    --red-light: #fdf0f0;
+    --border: #e2e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 400px;
+    animation: fadeUp 0.6s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  /* Header */
+  .header {
+    padding: 32px 24px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+  }
+
+  .icon-circle svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--blue);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .specialty {
+    font-size: 0.82rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .sub {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+  }
+
+  .location {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 12px;
+    padding: 5px 12px;
+    background: var(--bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+
+  .location svg {
+    width: 13px;
+    height: 13px;
+    fill: var(--blue-muted);
+    flex-shrink: 0;
+  }
+
+  .location span {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  /* Buttons */
+  .actions {
+    padding: 24px;
+  }
+
+  .actions-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 16px 18px;
+    border: none;
+    border-radius: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+  }
+
+  .btn-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .btn-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.35;
+  }
+
+  .btn-text small {
+    font-size: 0.66rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+
+  .btn-arrow {
+    margin-left: auto;
+    opacity: 0.4;
+    transition: all 0.2s ease;
+  }
+
+  .btn-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .btn:hover .btn-arrow {
+    opacity: 0.8;
+    transform: translateX(2px);
+  }
+
+  /* Emergency */
+  .btn-emergency {
+    background: var(--red-light);
+    color: var(--red);
+    border: 1px solid #f5d5d5;
+    margin-bottom: 10px;
+  }
+
+  .btn-emergency .btn-icon {
+    background: var(--red);
+  }
+
+  .btn-emergency .btn-icon svg {
+    fill: #fff;
+  }
+
+  .btn-emergency .btn-arrow svg {
+    fill: var(--red);
+  }
+
+  .btn-emergency:hover, .btn-emergency:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(214,69,69,0.15);
+  }
+
+  /* Pulse dot */
+  .pulse-dot {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 7px;
+    height: 7px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(214,69,69,0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(214,69,69,0); }
+  }
+
+  /* Consult */
+  .btn-consult {
+    background: var(--blue-light);
+    color: var(--blue);
+    border: 1px solid #d0dff0;
+  }
+
+  .btn-consult .btn-icon {
+    background: var(--blue);
+  }
+
+  .btn-consult .btn-icon svg {
+    fill: #fff;
+  }
+
+  .btn-consult .btn-arrow svg {
+    fill: var(--blue);
+  }
+
+  .btn-consult:hover, .btn-consult:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(43,108,176,0.12);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.68rem;
+    color: #a0aec0;
+  }
+
+  @media (max-width: 360px) {
+    .header { padding: 28px 20px 20px; }
+    .actions { padding: 20px 18px; }
+    h1 { font-size: 1.3rem; }
+    .btn { padding: 14px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <div class="header">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+      </div>
+      <h1>Dr. César Ramírez</h1>
+      <p class="specialty">Traumatología y Ortopedia</p>
+      <p class="sub">Alta Especialidad en Cirugía de Columna</p>
+      <div class="location">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span>Médica Chapultepec · Culiacán, Sinaloa</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <p class="actions-label">Comunicarse por WhatsApp</p>
+
+      <!--
+        PERSONALIZAR NÚMEROS:
+        Formato: https://wa.me/521XXXXXXXXXX
+        Ejemplo: https://wa.me/5216671234567
+      -->
+
+      <a href="https://wa.me/521XXXXXXXXXX?text=Hola%20Dr.%20Ram%C3%ADrez%2C%20tengo%20una%20urgencia"
+         class="btn btn-emergency" target="_blank" rel="noopener">
+        <span class="pulse-dot"></span>
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214l-.304-.18-2.871.853.853-2.871-.18-.304A8 8 0 1112 20z"/></svg>
+        </span>
+        <span class="btn-text">
+          <small>Urgencias</small>
+          Enviar mensaje
+        </span>
+        <span class="btn-arrow">
+          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </span>
+      </a>
+
+      <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20agendar%20una%20cita%20con%20el%20Dr.%20Ram%C3%ADrez"
+         class="btn btn-consult" target="_blank" rel="noopener">
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214l-.304-.18-2.871.853.853-2.871-.18-.304A8 8 0 1112 20z"/></svg>
+        </span>
+        <span class="btn-text">
+          <small>Consultorio</small>
+          Agendar cita
+        </span>
+        <span class="btn-arrow">
+          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+
+  <p class="footer">Médica Chapultepec · Blvd. Pedro María Anaya #1988, Col. Chapultepec</p>
+</div>
+
+</body>
+</html>
