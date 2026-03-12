@@ -101,17 +101,32 @@
   .doctor-tag {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.74rem;
-    color: var(--text-muted);
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
   }
 
   .doctor-tag .dot {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: var(--blue-muted);
     flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 5px;
+  }
+
+  .doctor-tag-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .doctor-tag-specialty {
+    font-size: 0.75rem;
+    color: var(--blue-muted);
+    font-weight: 500;
   }
 
   .location {
@@ -387,11 +402,22 @@
         <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
       </div>
       <h1>Ortopedia y Traumatología</h1>
-      <p class="specialty">Cirugía de Columna</p>
 
       <div class="doctors">
-        <span class="doctor-tag"><span class="dot"></span>Dr. César Ramírez</span>
-        <span class="doctor-tag"><span class="dot"></span>Dr. Alejandro Posadas</span>
+        <span class="doctor-tag">
+          <span class="dot"></span>
+          <span class="doctor-tag-info">
+            Dr. César Ramírez
+            <span class="doctor-tag-specialty">Cirugía de Columna</span>
+          </span>
+        </span>
+        <span class="doctor-tag">
+          <span class="dot"></span>
+          <span class="doctor-tag-info">
+            Dr. Alejandro Posadas
+            <span class="doctor-tag-specialty">Ortopedia Pediátrica</span>
+          </span>
+        </span>
       </div>
 
       <div class="location">
